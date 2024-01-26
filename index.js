@@ -69,7 +69,8 @@ class Musician {
   }
   // метод, що виводить рядок в консоль <#name> грає на <#instrument>
   play() {
-    return `${this.#name} грає на ${this.#instrument}`;
+    // return `${this.#name} грає на ${this.#instrument}`;
+    console.log(`${this.name} грає на ${this.instrument}`);
   }
 }
 
@@ -248,14 +249,12 @@ class Band {
   }
   // Створюємо метод addMember(), що додає нового учасника до гурту
   // Перевіряємо чи Musician є прототипом newMember
-  // Ось тут ми використовуємо сетер band класу Musician
-  // До приватного поля #members яке є масивом додаємо мового музиканта
-  // Якщо ні виводимо в консоль повідомлення Новий учасник повинен бути екземпляром класу Musician
   addMember(newMember) {
     if (Musician.prototype.isPrototypeOf(newMember)) {
-      newMember.band = this.#name;
-      this.#members.push(newMember);
+      newMember.band = this.#name; // Ось тут ми використовуємо сетер band класу Musician
+      this.#members.push(newMember); // До приватного поля #members яке є масивом додаємо мового музиканта
     } else {
+      // Якщо ні виводимо в консоль повідомлення Новий учасник повинен бути екземпляром класу Musician
       console.log(`Новий учасник повинен бути екземпляром класу Musician`);
     }
   }
@@ -440,9 +439,9 @@ class LeadSinger extends Vocalist {
  * | Властивість |  Значення        |
  * |-------------|------------------|
  * | name        | "John"           |
- * | instrument  | "Guitarist"      |
+ * | instrument  | "гітара"      |
  */
-const musician = new Musician("John", "Guitarist");
+const musician = new Musician("John", "гітара");
 
 /*
  * Створення guitarist екземпляра класу Guitarist
@@ -475,7 +474,8 @@ const bassist = new Bassist("Paul McCartney", "бас-гітара", "The Beatle
  * | name        | "The Beatles"    |
  * | members     | [bassist]       |
  */
-const band = new Band("The Beatles", [bassist]);
+// const band = new Band("The Beatles", [bassist]);
+const band = new Band("Led Zeppelin", [bassist]); //скориговано!!!
 
 // Додаємо guitarist до band за допомогою addMember
 band.addMember(guitarist);
