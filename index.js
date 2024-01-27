@@ -475,7 +475,7 @@ const bassist = new Bassist("Paul McCartney", "бас-гітара", "The Beatle
  * | members     | [bassist]       |
  */
 // const band = new Band("The Beatles", [bassist]);
-const band = new Band("Led Zeppelin", [bassist]); //скориговано!!!
+const band = new Band("Led Zeppelin", [bassist]); //зкориговано!!!
 
 // Додаємо guitarist до band за допомогою addMember
 band.addMember(guitarist);
